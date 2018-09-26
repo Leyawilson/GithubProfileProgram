@@ -1,0 +1,29 @@
+﻿@using  ProfilePage.Models
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Profile</h2>
+
+@{
+    var user = ViewBag.user as User;
+    var error = ViewBag.error;
+}
+
+@if (string.IsNullOrEmpty(error))
+{
+<h1>@user.name</h1>
+    <h3>ID: @user.id</h3>
+    <h3>Name: @user.name </h3>
+    <h3>Email: @user.email</h3>
+        <h3>Company: @user.company</h3>
+        <h3>location: @user.location</h3>
+        <h3>bio: @user.bio</h3>
+}
+else
+{
+    <h1> @error </h1>
+}
+
+
+
